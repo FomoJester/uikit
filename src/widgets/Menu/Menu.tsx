@@ -10,6 +10,15 @@ import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
 import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
 import Avatar from "./Avatar";
+import { MenuEntry } from "./MenuEntry";
+import MenuLink from "./MenuLink";
+import NavBar from "./NavBar";
+import Link from "../../components/Link/Link";
+import * as IconModule from "./icons";
+import { PancakeRoundIcon, CogIcon, SvgProps } from "../../components/Svg";
+
+const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
+const { TwitterIcon, TelegramIcon } = Icons;
 
 const Wrapper = styled.div`
   position: relative;
@@ -32,7 +41,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   z-index: 20;
   transform: translate3d(0, 0, 0);
   background-color: #fc5296;
-  background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%); 
+  background-image: linear-gradient(315deg, #fc5296 0%, #f67062 74%);
 `;
 
 const BodyWrapper = styled.div`
@@ -76,7 +85,7 @@ const Menu: React.FC<NavProps> = ({
 }) => {
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
-  const [isPushed, setIsPushed] = useState(!isMobile);
+  const [isPushed, setIsPushed] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
 
@@ -111,7 +120,7 @@ const Menu: React.FC<NavProps> = ({
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
-
+  const iconProps = { width: "32px", color: "textSubtle", style: { cursor: "pointer" } };
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
@@ -121,13 +130,29 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
+        <NavBar
+          isDark={isDark}
+          toggleTheme={toggleTheme}
+          langs={langs}
+          setLang={setLang}
+          currentLang={currentLang}
+          cakePriceUsd={cakePriceUsd}
+          links={links}
+          priceLink={priceLink}
+        />
         <Flex>
+          <Link external key="tg" href="#" aria-label="telegram" mr="0">
+            <TelegramIcon {...iconProps} />
+          </Link>
+          <Link external key="tt" href="#" aria-label="telegram" mr="0">
+            <TwitterIcon {...iconProps} />
+          </Link>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>
       <BodyWrapper>
-        <Panel
+        {/* <Panel
           isPushed={isPushed}
           isMobile={isMobile}
           showMenu={showMenu}
@@ -140,7 +165,7 @@ const Menu: React.FC<NavProps> = ({
           pushNav={setIsPushed}
           links={links}
           priceLink={priceLink}
-        />
+        /> */}
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>

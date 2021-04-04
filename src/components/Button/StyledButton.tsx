@@ -47,7 +47,7 @@ const getButtonVariantProp = (prop: keyof ButtonThemeVariant) => ({
 
 const StyledButton = styled.button<ButtonProps>`
   align-items: center;
-  background-color: ${getButtonVariantProp("background")};
+  background-color: #f894a4;
   border: ${getButtonVariantProp("border")};
   border-radius: 8px;
   box-shadow: ${getButtonVariantProp("boxShadow")};
