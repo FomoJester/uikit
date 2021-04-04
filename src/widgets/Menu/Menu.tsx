@@ -18,7 +18,7 @@ import * as IconModule from "./icons";
 import { PancakeRoundIcon, CogIcon, SvgProps } from "../../components/Svg";
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
-const { TwitterIcon, TelegramIcon } = Icons;
+const { TwitterIcon, TelegramIcon, GithubIcon, MediumIcon } = Icons;
 
 const Wrapper = styled.div`
   position: relative;
@@ -129,6 +129,8 @@ const Menu: React.FC<NavProps> = ({
           togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
           isDark={isDark}
           href={homeLink?.href ?? "/"}
+          cakePriceUsd={cakePriceUsd}
+          priceLink={priceLink}
         />
         <NavBar
           isDark={isDark}
@@ -141,11 +143,17 @@ const Menu: React.FC<NavProps> = ({
           priceLink={priceLink}
         />
         <Flex>
-          <Link external key="tg" href="#" aria-label="telegram" mr="0">
+          <Link external key="tt" href="https://twitter.com/dumpling_swap" aria-label="telegram" mr="1">
+            <TwitterIcon {...iconProps} />
+          </Link>
+          <Link external key="tg" href="https://t.me/dumplingswap_official" aria-label="telegram" mr="1">
             <TelegramIcon {...iconProps} />
           </Link>
-          <Link external key="tt" href="#" aria-label="telegram" mr="0">
-            <TwitterIcon {...iconProps} />
+          <Link external key="medium" href="https://dumplingswapdefi.medium.com/" aria-label="telegram" mr="1">
+            <MediumIcon {...iconProps} />
+          </Link>
+          <Link external key="git" href="https://github.com/dumplingswap" aria-label="telegram" mr="1">
+            <GithubIcon {...iconProps} />
           </Link>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}

@@ -4,6 +4,8 @@ interface Props {
     isDark: boolean;
     togglePush: () => void;
     href: string;
+    cakePriceUsd?: number;
+    priceLink: string;
 }
 declare const Logo: React.FC<Props>;
 export default Logo;

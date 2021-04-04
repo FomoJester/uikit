@@ -1,16 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { LogoIcon } from "../../components/Svg";
+import Text from "../../components/Text/Text";
+import { LogoIcon, PancakeRoundIcon } from "../../components/Svg";
 import Flex from "../../components/Flex/Flex";
 import { HamburgerIcon, HamburgerCloseIcon, LogoIcon as LogoWithText } from "./icons";
 import MenuButton from "./MenuButton";
+import { PanelProps } from "./types";
 
 interface Props {
   isPushed: boolean;
   isDark: boolean;
   togglePush: () => void;
   href: string;
+  cakePriceUsd?: number;
+  priceLink: string;
 }
 
 const StyledLink = styled(Link)`
@@ -31,7 +35,20 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
+const PriceLink = styled.a`
+  display: flex;
+  align-items: center;
+  svg {
+    transition: transform 0.3s;
+  }
+  :hover {
+    svg {
+      transform: scale(1.2);
+    }
+  }
+`;
+
+const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href, priceLink, cakePriceUsd }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
@@ -57,6 +74,11 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
         <StyledLink to={href} aria-label="Pancake home page">
           {innerLogo}
         </StyledLink>
+      )}
+      {cakePriceUsd != null && (
+        <PriceLink href={priceLink} target="_blank">
+          <Text ml="3" color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
+        </PriceLink>
       )}
     </Flex>
   );
