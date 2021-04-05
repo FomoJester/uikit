@@ -2055,7 +2055,7 @@ var Logo$1 = function (_a) {
     return (React__default['default'].createElement(Flex, null,
         isAbsoluteUrl ? (React__default['default'].createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React__default['default'].createElement(StyledLink$1, { to: href, "aria-label": "Pancake home page" }, innerLogo)),
         cakePriceUsd != null && (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
-            React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3))))));
+            React__default['default'].createElement(Text, { ml: "3", color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3))))));
 };
 var templateObject_1$x, templateObject_2$a;
 
@@ -2469,14 +2469,14 @@ var Menu = function (_a) {
             React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/", cakePriceUsd: cakePriceUsd, priceLink: priceLink }),
             React__default['default'].createElement(NavBar, { isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, links: links, priceLink: priceLink }),
             React__default['default'].createElement(Flex, null,
+                React__default['default'].createElement(Link, { external: true, key: "tt", href: "https://twitter.com/dumpling_swap", "aria-label": "telegram", mr: "1" },
+                    React__default['default'].createElement(TwitterIcon, __assign({}, iconProps))),
+                React__default['default'].createElement(Link, { external: true, key: "tg", href: "https://t.me/dumplingswap_official", "aria-label": "telegram", mr: "1" },
+                    React__default['default'].createElement(TelegramIcon, __assign({}, iconProps))),
                 React__default['default'].createElement(Link, { external: true, key: "medium", href: "https://dumplingswapdefi.medium.com/", "aria-label": "telegram", mr: "1" },
                     React__default['default'].createElement(MediumIcon, __assign({}, iconProps))),
                 React__default['default'].createElement(Link, { external: true, key: "git", href: "https://github.com/dumplingswap", "aria-label": "telegram", mr: "1" },
                     React__default['default'].createElement(GithubIcon, __assign({}, iconProps))),
-                React__default['default'].createElement(Link, { external: true, key: "tg", href: "https://t.me/dumplingswap_official", "aria-label": "telegram", mr: "1" },
-                    React__default['default'].createElement(TelegramIcon, __assign({}, iconProps))),
-                React__default['default'].createElement(Link, { external: true, key: "tt", href: "https://twitter.com/dumpling_swap", "aria-label": "telegram", mr: "1" },
-                    React__default['default'].createElement(TwitterIcon, __assign({}, iconProps))),
                 React__default['default'].createElement(UserBlock, { account: account, login: login, logout: logout }),
                 profile && React__default['default'].createElement(Avatar, { profile: profile }))),
         React__default['default'].createElement(BodyWrapper, null,
@@ -2583,7 +2583,7 @@ var baseColors = {
 var brandColors = {
     binance: "#F0B90B",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#db268f", backgroundDisabled: "#77144e", contrast: "#191326", invertedContrast: "#db268f", input: "#db268f", tertiary: "#EFF4F5", text: "#CC313D", textDisabled: "#BDC2C4", textSubtle: "#EFF4F5", borderColor: "#rgba(255, 255, 255, 0.3)", card: "#77144e", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#db268f", backgroundDisabled: "#77144e", contrast: "#191326", invertedContrast: "#faaba2", input: "#f77f72", tertiary: "#EFF4F5", text: "#CC313D", textDisabled: "#BDC2C4", textSubtle: "#EFF4F5", borderColor: "#rgba(255, 255, 255, 0.3)", card: "#faaba2", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
 var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#000", background: "#343135", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#191326", input: "#483f5a", primaryDark: "#0098A1", tertiary: "#353547", text: "#EAE2FC", textDisabled: "#666171", textSubtle: "#c9c4d4", borderColor: "#524B63", card: "#27262c", gradients: {
