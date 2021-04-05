@@ -131,49 +131,58 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
           cakePriceUsd={cakePriceUsd}
           priceLink={priceLink}
+          isMobile={isMobile}
         />
-        <NavBar
-          isDark={isDark}
-          toggleTheme={toggleTheme}
-          langs={langs}
-          setLang={setLang}
-          currentLang={currentLang}
-          cakePriceUsd={cakePriceUsd}
-          links={links}
-          priceLink={priceLink}
-        />
+        {!isMobile && (
+          <NavBar
+            isDark={isDark}
+            toggleTheme={toggleTheme}
+            langs={langs}
+            setLang={setLang}
+            currentLang={currentLang}
+            cakePriceUsd={cakePriceUsd}
+            links={links}
+            priceLink={priceLink}
+          />
+        )}
         <Flex>
-          <Link external key="tt" href="https://twitter.com/dumpling_swap" aria-label="telegram" mr="1">
-            <TwitterIcon {...iconProps} />
-          </Link>
-          <Link external key="tg" href="https://t.me/dumplingswap_official" aria-label="telegram" mr="1">
-            <TelegramIcon {...iconProps} />
-          </Link>
-          <Link external key="medium" href="https://dumplingswapdefi.medium.com/" aria-label="telegram" mr="1">
-            <MediumIcon {...iconProps} />
-          </Link>
-          <Link external key="git" href="https://github.com/dumplingswap" aria-label="telegram" mr="1">
-            <GithubIcon {...iconProps} />
-          </Link>
+          {!isMobile && (
+            <div style={{ display: "inherit" }}>
+              <Link external key="tt" href="https://twitter.com/dumpling_swap" aria-label="telegram" mr="1">
+                <TwitterIcon {...iconProps} />
+              </Link>
+              <Link external key="tg" href="https://t.me/dumplingswap_official" aria-label="telegram" mr="1">
+                <TelegramIcon {...iconProps} />
+              </Link>
+              <Link external key="medium" href="https://dumplingswapdefi.medium.com/" aria-label="telegram" mr="1">
+                <MediumIcon {...iconProps} />
+              </Link>
+              <Link external key="git" href="https://github.com/dumplingswap" aria-label="telegram" mr="1">
+                <GithubIcon {...iconProps} />
+              </Link>
+            </div>
+          )}
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>
       <BodyWrapper>
-        {/* <Panel
-          isPushed={isPushed}
-          isMobile={isMobile}
-          showMenu={showMenu}
-          isDark={isDark}
-          toggleTheme={toggleTheme}
-          langs={langs}
-          setLang={setLang}
-          currentLang={currentLang}
-          cakePriceUsd={cakePriceUsd}
-          pushNav={setIsPushed}
-          links={links}
-          priceLink={priceLink}
-        /> */}
+        {isMobile && (
+          <Panel
+            isPushed={isPushed}
+            isMobile={isMobile}
+            showMenu={showMenu}
+            isDark={isDark}
+            toggleTheme={toggleTheme}
+            langs={langs}
+            setLang={setLang}
+            currentLang={currentLang}
+            cakePriceUsd={cakePriceUsd}
+            pushNav={setIsPushed}
+            links={links}
+            priceLink={priceLink}
+          />
+        )}
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>

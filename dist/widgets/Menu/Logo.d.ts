@@ -6,6 +6,7 @@ interface Props {
     href: string;
     cakePriceUsd?: number;
     priceLink: string;
+    isMobile: boolean;
 }
 declare const Logo: React.FC<Props>;
 export default Logo;

@@ -20,8 +20,8 @@ const NavBar: React.FC<PanelProps> = ({ links }) => {
       <MenuEntry key={"/dough"} secondary isActive={false}>
         <MenuLink href="https://dumplingdefi.finance/dough">STAKING</MenuLink>
       </MenuEntry>
-      <MenuEntry key={"https://exchange.dumplingdefi.finance"} secondary isActive={false}>
-        <MenuLink href={"/exchange"}>BUY DUMP</MenuLink>
+      <MenuEntry key={"/exchange"} secondary isActive={false}>
+        <MenuLink href={"https://exchange.dumplingdefi.finance"}>BUY DUMP</MenuLink>
       </MenuEntry>
     </NavBody>
   );
