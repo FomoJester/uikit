@@ -2396,10 +2396,10 @@ var NavBar = function (_a) {
     _a.links;
     return (React__default['default'].createElement(NavBody, null,
         React__default['default'].createElement(MenuEntry, { key: "/farms", secondary: true, isActive: false },
-            React__default['default'].createElement(MenuLink, { href: "/farms" }, "FARMS")),
+            React__default['default'].createElement(MenuLink, { href: "https://dumplingswap.finance/farms" }, "FARMS")),
         React__default['default'].createElement(MenuEntry, { key: "/dough", secondary: true, isActive: false },
-            React__default['default'].createElement(MenuLink, { href: "/dough" }, "STAKING")),
-        React__default['default'].createElement(MenuEntry, { key: "/exchange", secondary: true, isActive: false },
+            React__default['default'].createElement(MenuLink, { href: "https://dumplingswap.finance/dough" }, "STAKING")),
+        React__default['default'].createElement(MenuEntry, { key: "https://exchange.dumplingswap.finance", secondary: true, isActive: false },
             React__default['default'].createElement(MenuLink, { href: "/exchange" }, "BUY DUMP"))));
 };
 var templateObject_1$C;

@@ -2383,10 +2383,10 @@ var NavBar = function (_a) {
     _a.links;
     return (React.createElement(NavBody, null,
         React.createElement(MenuEntry, { key: "/farms", secondary: true, isActive: false },
-            React.createElement(MenuLink, { href: "/farms" }, "FARMS")),
+            React.createElement(MenuLink, { href: "https://dumplingswap.finance/farms" }, "FARMS")),
         React.createElement(MenuEntry, { key: "/dough", secondary: true, isActive: false },
-            React.createElement(MenuLink, { href: "/dough" }, "STAKING")),
-        React.createElement(MenuEntry, { key: "/exchange", secondary: true, isActive: false },
+            React.createElement(MenuLink, { href: "https://dumplingswap.finance/dough" }, "STAKING")),
+        React.createElement(MenuEntry, { key: "https://exchange.dumplingswap.finance", secondary: true, isActive: false },
             React.createElement(MenuLink, { href: "/exchange" }, "BUY DUMP"))));
 };
 var templateObject_1$C;
