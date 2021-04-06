@@ -2538,14 +2538,11 @@ var templateObject_1$G, templateObject_2$f;
 
 var NavBody = styled__default['default'].div(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  justify-content: center;\n"], ["\n  position: relative;\n  display: flex;\n  justify-content: center;\n"])));
 var NavBar = function (_a) {
-    _a.links;
-    return (React__default['default'].createElement(NavBody, null,
-        React__default['default'].createElement(MenuEntry, { key: "/farms", secondary: true, isActive: false },
-            React__default['default'].createElement(MenuLink, { href: "https://dumplingdefi.finance/farms" }, "FARMS")),
-        React__default['default'].createElement(MenuEntry, { key: "/dough", secondary: true, isActive: false },
-            React__default['default'].createElement(MenuLink, { href: "https://dumplingdefi.finance/dough" }, "STAKING")),
-        React__default['default'].createElement(MenuEntry, { key: "/exchange", secondary: true, isActive: false },
-            React__default['default'].createElement(MenuLink, { href: "https://exchange.dumplingdefi.finance" }, "BUY DUMP"))));
+    var linksFullScreen = _a.linksFullScreen;
+    return (React__default['default'].createElement(NavBody, null, linksFullScreen.map(function (link) {
+        return (React__default['default'].createElement(MenuEntry, { key: link.href, secondary: true, isActive: false },
+            React__default['default'].createElement(MenuLink, { href: link.href }, link.label)));
+    })));
 };
 var templateObject_1$H;
 
@@ -2573,7 +2570,7 @@ var MobileOnlyOverlay = styled__default['default'](Overlay)(templateObject_5$1 |
 });
 var Menu = function (_a) {
     var _b;
-    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children;
+    var account = _a.account, login = _a.login, logout = _a.logout, isDark = _a.isDark, toggleTheme = _a.toggleTheme, langs = _a.langs, setLang = _a.setLang, currentLang = _a.currentLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, priceLink = _a.priceLink, profile = _a.profile, children = _a.children, linksFullScreen = _a.linksFullScreen;
     var isXl = useMatchBreakpoints().isXl;
     var isMobile = isXl === false;
     var _c = React.useState(false), isPushed = _c[0], setIsPushed = _c[1];
@@ -2613,7 +2610,7 @@ var Menu = function (_a) {
     return (React__default['default'].createElement(Wrapper$1, null,
         React__default['default'].createElement(StyledNav, { showMenu: showMenu },
             React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/", cakePriceUsd: cakePriceUsd, priceLink: priceLink, isMobile: isMobile }),
-            !isMobile && (React__default['default'].createElement(NavBar, { isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, links: links, priceLink: priceLink })),
+            !isMobile && (React__default['default'].createElement(NavBar, { isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, links: links, linksFullScreen: linksFullScreen, priceLink: priceLink })),
             React__default['default'].createElement(Flex, null,
                 !isMobile && (React__default['default'].createElement("div", { style: { display: "inherit" } },
                     React__default['default'].createElement(Link, { external: true, key: "tt", href: "https://twitter.com/dumpling_swap", "aria-label": "telegram", mr: "1" },

@@ -46,4 +46,8 @@ export interface NavProps extends PanelProps {
     login: Login;
     profile?: Profile;
     logout: () => void;
+    linksFullScreen: Array<MenuEntry>;
+}
+export interface NavBarProps extends PanelProps {
+    linksFullScreen: Array<MenuEntry>;
 }

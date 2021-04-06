@@ -82,6 +82,7 @@ const Menu: React.FC<NavProps> = ({
   priceLink,
   profile,
   children,
+  linksFullScreen,
 }) => {
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
@@ -142,6 +143,7 @@ const Menu: React.FC<NavProps> = ({
             currentLang={currentLang}
             cakePriceUsd={cakePriceUsd}
             links={links}
+            linksFullScreen={linksFullScreen}
             priceLink={priceLink}
           />
         )}

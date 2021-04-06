@@ -1,4 +1,4 @@
 import React from "react";
-import { PanelProps } from "./types";
-declare const NavBar: React.FC<PanelProps>;
+import { NavBarProps } from "./types";
+declare const NavBar: React.FC<NavBarProps>;
 export default NavBar;
