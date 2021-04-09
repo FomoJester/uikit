@@ -18,7 +18,7 @@ import * as IconModule from "./icons";
 import { PancakeRoundIcon, CogIcon, SvgProps } from "../../components/Svg";
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
-const { TwitterIcon, TelegramIcon, GithubIcon, MediumIcon } = Icons;
+const { TwitterIcon, TelegramIcon, GithubIcon, MediumIcon, GitbookIcon } = Icons;
 
 const Wrapper = styled.div`
   position: relative;
@@ -150,16 +150,25 @@ const Menu: React.FC<NavProps> = ({
         <Flex>
           {!isMobile && (
             <div style={{ display: "inherit" }}>
-              <Link external key="tt" href="https://twitter.com/dumpling_swap" aria-label="telegram" mr="1">
+              <Link
+                external
+                key="gitbook"
+                href="https://dumplingswapdefi.gitbook.io/dumplingswap/"
+                aria-label="gitbook"
+                mr="1"
+              >
+                <GitbookIcon {...iconProps} />
+              </Link>
+              <Link external key="tt" href="https://twitter.com/dumpling_swap" aria-label="twitter" mr="1">
                 <TwitterIcon {...iconProps} />
               </Link>
               <Link external key="tg" href="https://t.me/dumplingswap_official" aria-label="telegram" mr="1">
                 <TelegramIcon {...iconProps} />
               </Link>
-              <Link external key="medium" href="https://dumplingswapdefi.medium.com/" aria-label="telegram" mr="1">
+              <Link external key="medium" href="https://dumplingswapdefi.medium.com/" aria-label="medium" mr="1">
                 <MediumIcon {...iconProps} />
               </Link>
-              <Link external key="git" href="https://github.com/dumplingswap" aria-label="telegram" mr="1">
+              <Link external key="git" href="https://github.com/dumplingswap" aria-label="github" mr="1">
                 <GithubIcon {...iconProps} />
               </Link>
             </div>

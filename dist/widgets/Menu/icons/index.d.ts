@@ -25,3 +25,4 @@ export { default as LayerIcon } from "./Layer";
 export { default as RoadmapIcon } from "./Roadmap";
 export { default as MediumIcon } from "./Medium";
 export { default as GithubIcon } from "./Github";
+export { default as GitbookIcon } from "./Gitbook";
