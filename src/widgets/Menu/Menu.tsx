@@ -49,13 +49,14 @@ const BodyWrapper = styled.div`
   display: flex;
 `;
 
-const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
+const Inner = styled.div<{ isPushed: boolean; showMenu: boolean; isMobile: boolean }>`
   flex-grow: 1;
   margin-top: ${({ showMenu }) => (showMenu ? `${MENU_HEIGHT}px` : 0)};
   transition: margin-top 0.2s;
   transform: translate3d(0, 0, 0);
   ${({ theme }) => theme.mediaQueries.nav} {
-    margin-left: ${({ isPushed }) => `${isPushed ? SIDEBAR_WIDTH_FULL : SIDEBAR_WIDTH_REDUCED}px`};
+    margin-left: ${({ isPushed, isMobile }) =>
+      `${isPushed && isMobile ? SIDEBAR_WIDTH_FULL : isMobile ? SIDEBAR_WIDTH_REDUCED : 0}px`};
   }
 `;
 
@@ -194,7 +195,7 @@ const Menu: React.FC<NavProps> = ({
             priceLink={priceLink}
           />
         )}
-        <Inner isPushed={isPushed} showMenu={showMenu}>
+        <Inner isPushed={isPushed} showMenu={showMenu} isMobile={isMobile}>
           {children}
         </Inner>
         <MobileOnlyOverlay show={isPushed} onClick={() => setIsPushed(false)} role="presentation" />
