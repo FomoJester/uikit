@@ -2154,10 +2154,10 @@ var LinkLabel = styled__default['default'].div(templateObject_2$b || (templateOb
 });
 var MenuEntry = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  font-weight: 300;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: 0 8px !important;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  border-radius: 4px;\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    font-family: \"Raleway\", sans-serif;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: rgba(255, 255, 255, 0.3);\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  font-weight: 300;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: 0 8px !important;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  border-radius: 4px;\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    font-family: \"Raleway\", sans-serif;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: rgba(255, 255, 255, 0.3);\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), MENU_ENTRY_HEIGHT, function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "0 10px" : "0 6px");
+    return (secondary ? "0 8px" : "0 4px");
 }, function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "24px" : "16px");
+    return (secondary ? "22px" : "14px");
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
@@ -2583,7 +2583,7 @@ var Menu = function (_a) {
     var _c = React.useState(false), isPushed = _c[0], setIsPushed = _c[1];
     var _d = React.useState(true), showMenu = _d[0], setShowMenu = _d[1];
     var refPrevOffset = React.useRef(window.pageYOffset);
-    console.log("ismobile ****************** " + isMobile);
+    // console.log(`ismobile ****************** ${isMobile}`);
     React.useEffect(function () {
         var handleScroll = function () {
             var currentOffset = window.pageYOffset;
