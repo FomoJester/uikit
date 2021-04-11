@@ -90,7 +90,7 @@ const Menu: React.FC<NavProps> = ({
   const [isPushed, setIsPushed] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
   const refPrevOffset = useRef(window.pageYOffset);
-
+  // console.log(`ismobile ****************** ${isMobile}`);
   useEffect(() => {
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
