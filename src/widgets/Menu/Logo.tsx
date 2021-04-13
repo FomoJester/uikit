@@ -80,7 +80,7 @@ const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href, priceLink, 
       )}
       {cakePriceUsd != null && (
         <PriceLink href={priceLink} target="_blank">
-          <Text ml="3" color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
+          <Text ml="1" color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
         </PriceLink>
       )}
     </Flex>

@@ -2072,7 +2072,7 @@ var Logo$1 = function (_a) {
         isMobile && (React__default['default'].createElement(MenuButton, { "aria-label": "Toggle menu", onClick: togglePush, mr: "24px" }, isPushed ? (React__default['default'].createElement(Icon$L, { width: "24px", color: "textSubtle" })) : (React__default['default'].createElement(Icon$K, { width: "24px", color: "textSubtle" })))),
         isAbsoluteUrl ? (React__default['default'].createElement(StyledLink$1, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React__default['default'].createElement(StyledLink$1, { to: href, "aria-label": "Pancake home page" }, innerLogo)),
         cakePriceUsd != null && (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
-            React__default['default'].createElement(Text, { ml: "3", color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3))))));
+            React__default['default'].createElement(Text, { ml: "1", color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3))))));
 };
 var templateObject_1$y, templateObject_2$a;
 
@@ -2152,12 +2152,12 @@ var LinkLabel = styled__default['default'].div(templateObject_2$b || (templateOb
     var isPushed = _a.isPushed, theme = _a.theme;
     return (isPushed ? theme.colors.textSubtle : "transparent");
 });
-var MenuEntry = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  font-weight: 300;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: 0 8px !important;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  border-radius: 4px;\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    font-family: \"Raleway\", sans-serif;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: rgba(255, 255, 255, 0.3);\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  font-weight: 300;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: 0 8px !important;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  border-radius: 4px;\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    font-family: \"Raleway\", sans-serif;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: rgba(255, 255, 255, 0.3);\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), MENU_ENTRY_HEIGHT, function (_a) {
+var MenuEntry = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  font-weight: 400;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: 0 2px !important;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  border-radius: 4px;\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    font-family: \"Raleway\", sans-serif;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: rgba(255, 255, 255, 0.3);\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"], ["\n  font-weight: 400;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  margin: 0 2px !important;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  color: ", ";\n  box-shadow: ", ";\n  border-radius: 4px;\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n    font-family: \"Raleway\", sans-serif;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: rgba(255, 255, 255, 0.3);\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    -webkit-background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 200% 100%;\n    font-weight: bold;\n  }\n"])), MENU_ENTRY_HEIGHT, function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "0 8px" : "0 4px");
+    return (secondary ? "0 6px" : "0 4px");
 }, function (_a) {
     var secondary = _a.secondary;
-    return (secondary ? "22px" : "14px");
+    return (secondary ? "16px" : "10px");
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
@@ -2614,7 +2614,7 @@ var Menu = function (_a) {
     }, []);
     // Find the home link if provided
     var homeLink = links.find(function (link) { return link.label === "Home"; });
-    var iconProps = { width: "32px", color: "textSubtle", style: { cursor: "pointer" } };
+    var iconProps = { width: "28px", color: "textSubtle", style: { cursor: "pointer" } };
     return (React__default['default'].createElement(Wrapper$1, null,
         React__default['default'].createElement(StyledNav, { showMenu: showMenu },
             React__default['default'].createElement(Logo$1, { isPushed: isPushed, togglePush: function () { return setIsPushed(function (prevState) { return !prevState; }); }, isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/", cakePriceUsd: cakePriceUsd, priceLink: priceLink, isMobile: isMobile }),

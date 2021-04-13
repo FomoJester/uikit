@@ -24,14 +24,14 @@ const LinkLabel = styled.div<{ isPushed: boolean }>`
 `;
 
 const MenuEntry = styled.div<Props>`
-  font-weight: 300;
+  font-weight: 400;
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin: 0 8px !important;
+  margin: 0 2px !important;
   height: ${MENU_ENTRY_HEIGHT}px;
-  padding: ${({ secondary }) => (secondary ? "0 8px" : "0 4px")};
-  font-size: ${({ secondary }) => (secondary ? "22px" : "14px")};
+  padding: ${({ secondary }) => (secondary ? "0 6px" : "0 4px")};
+  font-size: ${({ secondary }) => (secondary ? "16px" : "10px")};
   color: ${({ theme }) => theme.colors.textSubtle};
   box-shadow: ${({ isActive, theme }) => (isActive ? `inset 4px 0px 0px ${theme.colors.primary}` : "none")};
   border-radius: 4px;

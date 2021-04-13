@@ -122,7 +122,7 @@ const Menu: React.FC<NavProps> = ({
 
   // Find the home link if provided
   const homeLink = links.find((link) => link.label === "Home");
-  const iconProps = { width: "32px", color: "textSubtle", style: { cursor: "pointer" } };
+  const iconProps = { width: "28px", color: "textSubtle", style: { cursor: "pointer" } };
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
